@@ -148,18 +148,6 @@ function showPassSection() {
   }
 }
 
-// window.addEventListener("load", function () {
-//   emailInput.addEventListener("input", function () {
-//     if (!emailRegex.test(emailInput.value.trim())) {
-//       emailInput.style.border = "1px solid red";
-//       emailError.style.display = "block";
-//     } else {
-//       emailInput.style.border = "1px solid grey";
-//       emailError.style.display = "none";
-//     }
-//   });
-// });
-
 submitBtn.addEventListener("click", function () {
   let data = new FormData();
   data.append("user_password", passwordInput.value);
@@ -167,15 +155,15 @@ submitBtn.addEventListener("click", function () {
 
   axios({
     method: "post",
-    url: "http://localhost/ClassRoom-Clone/apis/signin.php",
+    url: "http://localhost:8000/apis/signin",
     data: data,
   })
     .then((result) => {
       console.log(result);
       if (result.data.status == "logged in") {
         localStorage.setItem("user_id", result.data.user_id);
-        window.location.href = "classes.html";
-      } else showResponseMessageModal(result.data.status);
+        window.location.href = "index.html";
+      } else console.log(result.data.status);
     })
     .catch((err) => {
       console.error(err);
@@ -190,7 +178,7 @@ function update_pass() {
 
   axios({
     method: "post",
-    url: "http://localhost/ClassRoom-Clone/apis/updatepass.php",
+    url: "http://localhost:8000/apis/updatepass",
     data: data,
   })
     .then((result) => {

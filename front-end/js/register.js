@@ -41,13 +41,6 @@ let ConfirmPasswordInput = document.getElementById("Confirm_Password");
 let submitBtn = document.getElementById("submit");
 showPassCheckbox = document.getElementById("showPass");
 
-const response_message = document.getElementById('response-message');
-const message_modal = document.getElementById('message-modal')
-const modal_close = document.getElementById('modal-close')
-
-
-modal_close.addEventListener('click', hideResponseMessageModal)
-
 FirstNameInput.addEventListener("input", function () {
   if (FirstNameInput.value.trim() !== "") {
     FirstNameInput.style.border = "1px solid grey";
@@ -110,14 +103,14 @@ submitBtn.addEventListener("click", function () {
   
   axios({
       "method": "post",
-      "url": "http://localhost:8000/ClassRoom-Clone/apis/register.php",
+      "url": "http://localhost:8000/apis/register",
       "data": data
   }).then((result) => {
       console.log(result)
       if (result.data.status == "success") {
           window.location.href = 'signin.html';   
       }
-      else{ showResponseMessageModal(result.data.message)};
+      else{console.log(result.data.message)};
   }).catch((err) => {
       console.error(err)
   });
