@@ -93,6 +93,19 @@ showPassCheckbox.addEventListener("change", function () {
   PasswordInput.type = showPassword ? "text" : "password";
 });
 
+function showPassSection() {
+  if (!emailRegex.test(emailInput.value.trim())) {
+    emailInput.style.border = "1px solid red";
+    emailError.style.display = "block";
+  } else {
+    emailInput.style.border = "1px solid grey";
+    emailError.style.display = "none";
+
+    passwordSection.style.display = "flex";
+    emailSection.style.display = "none";
+  }
+}
+
 
 submitBtn.addEventListener("click", function () {
   let data = new FormData();
@@ -115,3 +128,4 @@ submitBtn.addEventListener("click", function () {
       console.error(err)
   });
 })
+

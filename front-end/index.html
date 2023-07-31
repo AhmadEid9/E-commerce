@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Best Prices for you</title>
     <link rel="stylesheet" href="./css/styles.css">
 </head>
 <body>
@@ -17,20 +17,28 @@
               <li id="products"><a href="#">Products</a></li>
               <li id="categories"><a href="#">Categories</a></li>
             </ul>
-            <div class="auth-links">
-                <a href="#">Register</a>
-                <a href="#">Sign In</a>
-              </div>
+            <div class="auth-links" id="auth-links">
+                <a href="pages/register.html">Register</a>
+                <a href="pages/signin.html">Sign In</a>
+            </div>
         </div>
     </header>
     <main>
         <div class="container">
             <div class="sidebar">
                 <ul class="sidebar-menu">
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Analytics</a></li>
-                    <li><a href="#">Settings</a></li>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#">Best Sellers</a></li>
+                    <li><a href="#">Filter</a></li>
                 </ul>
+            </div>
+            <div class="products">
+                <div class="card">
+                    <img src="assets/shop.png" alt="icon" class="logo">
+                    <label>Name:</label>
+                    <label>Category:</label>
+                    <label>Price:</label>
+                </div>
             </div>
         </div>
     </main>
