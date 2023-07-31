@@ -11,5 +11,13 @@ class Items extends Model
     public function category(){
         return $this->BelongsTo(Category::class);
     }
+
+    protected $fillable = [
+        'item_name',
+        'item_description',
+        'item_price',
+        'item_category',
+        'item_image',
+    ];
     use HasFactory;
 }

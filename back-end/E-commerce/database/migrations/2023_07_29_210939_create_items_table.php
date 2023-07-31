@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('item_description');
             $table->integer('item_price');
             $table->integer('item_category');
+            $table->string('item_image');
 
             $table->timestamps();
         });

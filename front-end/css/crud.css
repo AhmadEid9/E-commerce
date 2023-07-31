@@ -1,0 +1,27 @@
+.crud-container{
+    display: flex;
+    flex-direction: column;
+
+    gap: 1%;
+
+
+    margin:3%;
+    padding: 2%;
+
+    border: 1px solid #555;
+    border-radius: 10px;
+
+    background-color: #f0f0f0;
+
+    width: 40%;
+}
+
+.crud-container input, .crud-container textarea{
+  width: 40%;
+}
+
+.crud-container button{
+  width: 25%;
+  background-color: rgb(34, 34, 34);
+  color: aliceblue;
+}
